@@ -4,7 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 let isOn = "";
 app.use("/", express.static(path.join(__dirname, "../dist")));
