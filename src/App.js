@@ -4,6 +4,8 @@ import { hot } from "react-hot-loader/root";
 import axios from "axios";
 import ReactPlayer from "react-player/youtube";
 //import SoundCloudPlayer from "react-player/soundcloud";
+//const ENDPOINT = "http://localhost:3000";
+
 const ENDPOINT = "https://sleepy-meadow-38123.herokuapp.com/";
 
 class App extends React.Component {

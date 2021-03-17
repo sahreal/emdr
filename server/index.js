@@ -31,7 +31,7 @@ let flipSwitch = socket => {
     isOn = true;
   }
   console.log(isOn, "is this on");
-  socket.emit("FromAPI", isOn);
+  socket.local.emit("FromAPI", isOn);
 };
 
 http.listen(port, () => {
