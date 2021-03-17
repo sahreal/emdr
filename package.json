@@ -1,0 +1,53 @@
+{
+  "name": "emdr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build-dev": "webpack --mode development",
+    "build-prod": "webpack --mode production",
+    "start": "webpack -d --watch & nodemon ./server/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.13",
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "postcss": "^8.2.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.13.0",
+    "react-player": "^2.9.0",
+    "skynet-js": "^3.0.0",
+    "socket.io": "^3.1.1",
+    "socket.io-client": "^3.1.1",
+    "tailwindcss": "^1.8.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@hot-loader/react-dom": "^17.0.0-rc.2+4.13.0",
+    "@webpack-cli/serve": "^1.3.0",
+    "autoprefixer": "^10.0.0",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "jest": "^26.4.2",
+    "postcss-loader": "^4.0.2",
+    "prettier": "^2.1.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
