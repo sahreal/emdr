@@ -7,6 +7,7 @@ const io = require("socket.io")(http);
 const port = process.env.PORT || 3000;
 
 let isOn = "";
+let videoData = "";
 app.use("/", express.static(path.join(__dirname, "../dist")));
 app.use(bodyParser.json());
 app.post("/test", (req, res) => {
@@ -18,6 +19,7 @@ io.on("connection", socket => {
   console.log("a user connected");
 
   flipSwitch(socket);
+  videoSync(socket);
 
   socket.on("disconnect", () => {
     console.log("user disconnected");
@@ -30,8 +32,15 @@ let flipSwitch = socket => {
   } else {
     isOn = true;
   }
-  console.log(isOn, "is this on");
+  //console.log(isOn, "is this on");
   socket.local.emit("FromAPI", isOn);
+};
+
+let videoSync = socket => {
+  socket.on("syncVideo", data => {
+    console.log(data, "tests");
+    socket.broadcast.emit("syncVideo", data);
+  });
 };
 
 http.listen(port, () => {
