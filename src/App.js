@@ -28,9 +28,10 @@ class App extends React.Component {
 
   componentDidUpdate() {
     //this.sendStatus(this.state);
+    //console.log(this.state.played, "getitgirl");
     socket.on("timeCode", data => {
+      //console.log(data);
       this.setState({ played: data.time });
-      console.log(data, "getitgirl");
     });
   }
 
@@ -68,7 +69,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.played, "seconds played");
     return (
       <div>
         <h1 className="text-4xl text-white bg-black">EMDR example</h1>
@@ -96,7 +96,7 @@ class App extends React.Component {
             onProgress={this.onProgress}
           />
         </div>
-        <div>
+        {/* <div>
           <input
             type="range"
             min={0}
@@ -107,7 +107,7 @@ class App extends React.Component {
             onMouseUp={this.handleSeekMouseUp}
             onMouseDown={this.handleSeekMouseDown}
           />
-        </div>
+        </div> */}
         <div>
           {/* <button
             onClick={this.clickHandler}

@@ -39,7 +39,7 @@ let flipSwitch = socket => {
 let videoSync = socket => {
   socket.on("syncVideo", data => {
     console.log(data, "tests");
-    socket.broadcast.emit("syncVideo", data);
+    socket.local.emit("timeCode", data);
   });
 };
 
